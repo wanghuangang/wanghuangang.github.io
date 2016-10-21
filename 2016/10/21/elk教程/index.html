@@ -84,13 +84,16 @@
 
 
 
+<meta name="description" content="1.安装JAVA环境 jdk1.8    curl -L “http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm“ -H “Cookie: oraclelicense=accept-securebackup-cookie”  -H “Connection: keep-alive” -O    rp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="elk教程">
 <meta property="og:url" content="http://suibo.tv/2016/10/21/elk教程/index.html">
 <meta property="og:site_name" content="淘乐创想科技技术">
-<meta property="og:updated_time" content="2016-10-21T08:02:05.967Z">
+<meta property="og:description" content="1.安装JAVA环境 jdk1.8    curl -L “http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm“ -H “Cookie: oraclelicense=accept-securebackup-cookie”  -H “Connection: keep-alive” -O    rp">
+<meta property="og:updated_time" content="2016-10-21T09:37:57.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="elk教程">
+<meta name="twitter:description" content="1.安装JAVA环境 jdk1.8    curl -L “http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm“ -H “Cookie: oraclelicense=accept-securebackup-cookie”  -H “Connection: keep-alive” -O    rp">
 
 
 
@@ -276,7 +279,21 @@
       
 
       
-        
+        <p>1.安装JAVA环境 jdk1.8<br>    curl -L “<a href="http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm" target="_blank" rel="external">http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm</a>“ -H “Cookie: oraclelicense=accept-securebackup-cookie”  -H “Connection: keep-alive” -O<br>    rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm</p>
+<p>2.装ELK<br>   下载网址：<a href="https://www.elastic.co/" target="_blank" rel="external">https://www.elastic.co/</a><br>      Elasticsearch + Logstash + Kibana = elk<br>    分别用tar -zvxv 解压以上三个压缩包 </p>
+<pre><code>Elasticsearch那台机器 目录安装以下证书
+bin/plugin install license //证书
+bin/plugin install mobz/elasticsearch-head  //监控插件
+ bin/plugin install lmenezes/elasticsearch-kopf//监控插件
+
+Elasticsearch进程一定要以非root权限启动
+groupadd elasticsearch //加组
+</code></pre><p>　    useradd  elasticsearch(用户名) -g elasticsearch(组名) -p elasticsearch(密码) //用户名<br>    chown -R elasticsearch:elasticsearch elasticsearch //改目录权限</p>
+<pre><code>linux配置扩内存,以下可以优化Elasticsearch性能
+Edit /etc/security/limits.conf
+ *                soft    memlock        unlimited
+*                hard    memlock        unlimited
+</code></pre>
       
     </div>
 
@@ -297,20 +314,6 @@
     <footer class="post-footer">
       
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/10/21/hello-world/" rel="next" title="Hello Taole">
-                <i class="fa fa-chevron-left"></i> Hello Taole
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
       
 
       
@@ -375,7 +378,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
