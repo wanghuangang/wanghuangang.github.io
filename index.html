@@ -282,7 +282,10 @@
       
         
           
-            <p>1.安装JAVA环境 jdk1.8<br>    curl -L “<a href="http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm" target="_blank" rel="external">http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm</a>“ -H “Cookie: oraclelicense=accept-securebackup-cookie”  -H “Connection: keep-alive” -O<br>    rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm</p>
+            <p>1.安装JAVA环境 jdk1.8</p>
+<pre><code class="bash">curl -L <span class="string">"http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm"</span> -H <span class="string">"Cookie: oraclelicense=accept-securebackup-cookie"</span>  -H <span class="string">"Connection: keep-alive"</span> -O 
+rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm
+</code></pre>
 <p>2.装ELK<br>   下载网址：<a href="https://www.elastic.co/" target="_blank" rel="external">https://www.elastic.co/</a><br>      Elasticsearch + Logstash + Kibana = elk<br>    分别用tar -zvxv 解压以上三个压缩包 </p>
 <pre><code>Elasticsearch那台机器 目录安装以下证书
 bin/plugin install license //证书
