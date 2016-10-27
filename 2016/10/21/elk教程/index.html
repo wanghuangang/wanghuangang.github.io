@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="1.安装JAVA环境 jdk1.812curl -L &amp;quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&amp;quot; -H &amp;quot;Cookie: oraclelicense=accept-securebackup-cookie&amp;quot;  -H &amp;quot;Connectio">
+<meta name="description" content="1.安装JAVA环境 jdk1.82.安装ELK3.编辑配置文件 vi config/elasticsearch.yml4.性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elasticsearch-2.4.0安装教程">
 <meta property="og:url" content="http://suibo.tv/2016/10/21/elk教程/index.html">
 <meta property="og:site_name" content="淘乐创想科技技术">
-<meta property="og:description" content="1.安装JAVA环境 jdk1.812curl -L &amp;quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&amp;quot; -H &amp;quot;Cookie: oraclelicense=accept-securebackup-cookie&amp;quot;  -H &amp;quot;Connectio">
-<meta property="og:updated_time" content="2016-10-27T09:45:08.108Z">
+<meta property="og:description" content="1.安装JAVA环境 jdk1.82.安装ELK3.编辑配置文件 vi config/elasticsearch.yml4.性能优化">
+<meta property="og:updated_time" content="2016-10-27T14:47:56.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elasticsearch-2.4.0安装教程">
-<meta name="twitter:description" content="1.安装JAVA环境 jdk1.812curl -L &amp;quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&amp;quot; -H &amp;quot;Cookie: oraclelicense=accept-securebackup-cookie&amp;quot;  -H &amp;quot;Connectio">
+<meta name="twitter:description" content="1.安装JAVA环境 jdk1.82.安装ELK3.编辑配置文件 vi config/elasticsearch.yml4.性能优化">
 
 
 
@@ -257,8 +257,34 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/运维技术/" itemprop="url" rel="index">
+                    <span itemprop="name">运维技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/21/elk教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/21/elk教程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -279,10 +305,11 @@
       
 
       
-        <h1 id="1-安装JAVA环境-jdk1-8"><a href="#1-安装JAVA环境-jdk1-8" class="headerlink" title="1.安装JAVA环境 jdk1.8"></a>1.安装JAVA环境 jdk1.8</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -L &quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&quot; -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;  -H &quot;Connection: keep-alive&quot; -O </div><div class="line">    rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm</div></pre></td></tr></table></figure>
-<h2 id="2-安装ELK"><a href="#2-安装ELK" class="headerlink" title="2.安装ELK"></a>2.安装ELK</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Elasticsearch那台机器 目录安装以下证书</div><div class="line">bin/plugin install license //证书</div><div class="line">bin/plugin install mobz/elasticsearch-head  //监控插件</div><div class="line">bin/plugin install lmenezes/elasticsearch-kopf//监控插件</div><div class="line"></div><div class="line">Elasticsearch进程一定要以非root权限启动</div><div class="line">groupadd elasticsearch //加组</div><div class="line">useradd  elasticsearch(用户名) -g elasticsearch(组名) -p elasticsearch(密码) //用户名</div><div class="line">chown -R elasticsearch:elasticsearch elasticsearch //改目录权限</div><div class="line"></div><div class="line">linux配置扩内存,以下可以优化Elasticsearch性能</div><div class="line">Edit /etc/security/limits.conf</div><div class="line">*                soft    memlock        unlimited</div><div class="line">*                hard    memlock        unlimited</div></pre></td></tr></table></figure>
-<h1 id="3-编辑vi-config-elasticsearch-yml"><a href="#3-编辑vi-config-elasticsearch-yml" class="headerlink" title="3.编辑vi config/elasticsearch.yml"></a>3.编辑vi config/elasticsearch.yml</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> cluster.name: taolelogs #集群名字</div><div class="line">node.master: true  #是否是主节点</div><div class="line">node.date: false   #是否是数据节点</div><div class="line">node.name: nodemaster-hz90 #本节点名字</div></pre></td></tr></table></figure>
-<h1 id="4-编辑bin-elasticsearch-in-sh-文件"><a href="#4-编辑bin-elasticsearch-in-sh-文件" class="headerlink" title="4.编辑bin/elasticsearch.in.sh 文件"></a>4.编辑bin/elasticsearch.in.sh 文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">if [ &quot;x$ES_MIN_MEM&quot; = &quot;x&quot; ]; then</div><div class="line">   	ES_MIN_MEM=8g #设置内存</div><div class="line">fi</div><div class="line">if [ &quot;x$ES_MAX_MEM&quot; = &quot;x&quot; ]; then</div><div class="line">   	ES_MAX_MEM=8g #设置内存</div><div class="line">fi</div><div class="line">if [ &quot;x$ES_HEAP_SIZE&quot; != &quot;x&quot; ]; then</div><div class="line">   	ES_MIN_MEM=$ES_HEAP_SIZE</div><div class="line">   	ES_MAX_MEM=$ES_HEAP_SIZE</div></pre></td></tr></table></figure>
+        <p>1.安装JAVA环境 jdk1.8<br>2.安装ELK<br>3.编辑配置文件 vi config/elasticsearch.yml<br>4.性能优化<br><a id="more"></a></p>
+<h1 id="1-安装JAVA环境-jdk1-8"><a href="#1-安装JAVA环境-jdk1-8" class="headerlink" title="1.安装JAVA环境 jdk1.8"></a>1.安装JAVA环境 jdk1.8</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -L &quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&quot; -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;  -H &quot;Connection: keep-alive&quot; -O </div><div class="line">    rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm</div></pre></td></tr></table></figure>
+<h1 id="2-安装ELK"><a href="#2-安装ELK" class="headerlink" title="2.安装ELK"></a>2.安装ELK</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">Elasticsearch那台机器 目录安装以下证书</div><div class="line">bin/plugin install license //证书</div><div class="line">bin/plugin install mobz/elasticsearch-head  //监控插件</div><div class="line">bin/plugin install lmenezes/elasticsearch-kopf//监控插件</div><div class="line"></div><div class="line">Elasticsearch进程一定要以非root权限启动</div><div class="line">groupadd elasticsearch //加组</div><div class="line">useradd  elasticsearch(用户名) -g elasticsearch(组名) -p elasticsearch(密码) //用户名</div><div class="line">chown -R elasticsearch:elasticsearch elasticsearch //改目录权限</div><div class="line"></div><div class="line">linux配置扩内存,以下可以优化Elasticsearch性能</div><div class="line">Edit /etc/security/limits.conf</div><div class="line">*                soft    memlock        unlimited</div><div class="line">*                hard    memlock        unlimited</div></pre></td></tr></table></figure>
+<h1 id="3-编辑配置文件vi-config-elasticsearch-yml"><a href="#3-编辑配置文件vi-config-elasticsearch-yml" class="headerlink" title="3.编辑配置文件vi config/elasticsearch.yml"></a>3.编辑配置文件vi config/elasticsearch.yml</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> cluster.name: taolelogs #集群名字</div><div class="line">node.master: true  #是否是主节点</div><div class="line">node.date: false   #是否是数据节点</div><div class="line">node.name: nodemaster-hz90 #本节点名字</div></pre></td></tr></table></figure>
+<h1 id="4-性能优化-bin-elasticsearch-in-sh-文件"><a href="#4-性能优化-bin-elasticsearch-in-sh-文件" class="headerlink" title="4.性能优化 bin/elasticsearch.in.sh 文件"></a>4.性能优化 bin/elasticsearch.in.sh 文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">if [ &quot;x$ES_MIN_MEM&quot; = &quot;x&quot; ]; then</div><div class="line">   	ES_MIN_MEM=8g #设置内存</div><div class="line">fi</div><div class="line">if [ &quot;x$ES_MAX_MEM&quot; = &quot;x&quot; ]; then</div><div class="line">   	ES_MAX_MEM=8g #设置内存</div><div class="line">fi</div><div class="line">if [ &quot;x$ES_HEAP_SIZE&quot; != &quot;x&quot; ]; then</div><div class="line">   	ES_MIN_MEM=$ES_HEAP_SIZE</div><div class="line">   	ES_MAX_MEM=$ES_HEAP_SIZE</div></pre></td></tr></table></figure>
 <h1 id="5-启动"><a href="#5-启动" class="headerlink" title="5.启动"></a>5.启动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/elasticsearch</div></pre></td></tr></table></figure>
 
       
@@ -336,6 +363,25 @@
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/10/21/elk教程/"
+     data-title="Elasticsearch-2.4.0安装教程"
+     data-content=""
+     data-url="http://suibo.tv/2016/10/21/elk教程/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -346,6 +392,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/21/elk教程/"
+           data-title="Elasticsearch-2.4.0安装教程" data-url="http://suibo.tv/2016/10/21/elk教程/">
+      </div>
     
   </div>
 
@@ -389,11 +439,18 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
           
 
           
@@ -428,7 +485,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装JAVA环境-jdk1-8"><span class="nav-number">1.</span> <span class="nav-text">1.安装JAVA环境 jdk1.8</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装ELK"><span class="nav-number">1.1.</span> <span class="nav-text">2.安装ELK</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-编辑vi-config-elasticsearch-yml"><span class="nav-number">2.</span> <span class="nav-text">3.编辑vi config/elasticsearch.yml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-编辑bin-elasticsearch-in-sh-文件"><span class="nav-number">3.</span> <span class="nav-text">4.编辑bin/elasticsearch.in.sh 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-启动"><span class="nav-number">4.</span> <span class="nav-text">5.启动</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装JAVA环境-jdk1-8"><span class="nav-number">1.</span> <span class="nav-text">1.安装JAVA环境 jdk1.8</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-安装ELK"><span class="nav-number">2.</span> <span class="nav-text">2.安装ELK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-编辑配置文件vi-config-elasticsearch-yml"><span class="nav-number">3.</span> <span class="nav-text">3.编辑配置文件vi config/elasticsearch.yml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-性能优化-bin-elasticsearch-in-sh-文件"><span class="nav-number">4.</span> <span class="nav-text">4.性能优化 bin/elasticsearch.in.sh 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-启动"><span class="nav-number">5.</span> <span class="nav-text">5.启动</span></a></li></ol></div>
             
           </div>
         </section>
@@ -542,9 +599,30 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wanghuangang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
 
 
 

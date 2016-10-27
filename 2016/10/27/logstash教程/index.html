@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="1.安装JAVA环境 jdk1.812curl -L &amp;quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&amp;quot; -H &amp;quot;Cookie: oraclelicense=accept-securebackup-cookie&amp;quot;  -H &amp;quot;Connectio">
+<meta name="description" content="安装logstash负责收集LOG1.安装JAVA环境 jdk1.82.安装logstash3.配置文件4.启动logstash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="logstash教程">
 <meta property="og:url" content="http://suibo.tv/2016/10/27/logstash教程/index.html">
 <meta property="og:site_name" content="淘乐创想科技技术">
-<meta property="og:description" content="1.安装JAVA环境 jdk1.812curl -L &amp;quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&amp;quot; -H &amp;quot;Cookie: oraclelicense=accept-securebackup-cookie&amp;quot;  -H &amp;quot;Connectio">
-<meta property="og:updated_time" content="2016-10-27T14:00:36.310Z">
+<meta property="og:description" content="安装logstash负责收集LOG1.安装JAVA环境 jdk1.82.安装logstash3.配置文件4.启动logstash">
+<meta property="og:updated_time" content="2016-10-27T14:42:31.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="logstash教程">
-<meta name="twitter:description" content="1.安装JAVA环境 jdk1.812curl -L &amp;quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&amp;quot; -H &amp;quot;Cookie: oraclelicense=accept-securebackup-cookie&amp;quot;  -H &amp;quot;Connectio">
+<meta name="twitter:description" content="安装logstash负责收集LOG1.安装JAVA环境 jdk1.82.安装logstash3.配置文件4.启动logstash">
 
 
 
@@ -257,8 +257,34 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/运维技术/" itemprop="url" rel="index">
+                    <span itemprop="name">运维技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/27/logstash教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/27/logstash教程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -279,9 +305,10 @@
       
 
       
-        <h1 id="1-安装JAVA环境-jdk1-8"><a href="#1-安装JAVA环境-jdk1-8" class="headerlink" title="1.安装JAVA环境 jdk1.8"></a>1.安装JAVA环境 jdk1.8</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -L &quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&quot; -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;  -H &quot;Connection: keep-alive&quot; -O </div><div class="line">    rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm</div></pre></td></tr></table></figure>
-<h1 id="2-安装logstash"><a href="#2-安装logstash" class="headerlink" title="2.安装logstash"></a>2.安装logstash</h1><pre><code>[下载官网](https://www.elastic.co/)
-</code></pre><blockquote>
+        <p>安装logstash负责收集LOG<br>1.安装JAVA环境 jdk1.8<br>2.安装logstash<br>3.配置文件<br>4.启动logstash<br><a id="more"></a>以下是余下全文 </p>
+<h1 id="1-安装JAVA环境-jdk1-8"><a href="#1-安装JAVA环境-jdk1-8" class="headerlink" title="1.安装JAVA环境 jdk1.8"></a>1.安装JAVA环境 jdk1.8</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -L &quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&quot; -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;  -H &quot;Connection: keep-alive&quot; -O </div><div class="line">    rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm</div></pre></td></tr></table></figure>
+<h1 id="2-安装logstash"><a href="#2-安装logstash" class="headerlink" title="2.安装logstash"></a>2.安装logstash</h1><p><a href="https://www.elastic.co/" target="_blank" rel="external">官网：https://www.elastic.co/</a></p>
+<blockquote>
 <ul>
 <li>下载  logstash-2.4.0.tar.gz</li>
 <li>解压 tar -zvxf logstash-2.4.0.tar.gz</li>
@@ -328,6 +355,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/10/27/kibana/" rel="prev" title="kibana">
+                kibana <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -341,6 +372,25 @@
 
     <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2016/10/27/logstash教程/"
+     data-title="logstash教程"
+     data-content=""
+     data-url="http://suibo.tv/2016/10/27/logstash教程/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
     </div>
   </div>
 
@@ -351,6 +401,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/27/logstash教程/"
+           data-title="logstash教程" data-url="http://suibo.tv/2016/10/27/logstash教程/">
+      </div>
     
   </div>
 
@@ -394,11 +448,18 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
           
 
           
@@ -547,9 +608,30 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"wanghuangang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
 
 
 

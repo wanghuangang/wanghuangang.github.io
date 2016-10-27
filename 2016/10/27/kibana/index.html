@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="运维技术," />
 
 
 
@@ -84,12 +84,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="淘乐创想科技技术">
-<meta property="og:url" content="http://suibo.tv/index.html">
+<meta name="description" content="kibana 是展示数据的WEB界面，方便开发定位与解决程序性能的好工具1.安装JAVA环境 jdk1.82.安装kibana3.编辑配置文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kibana">
+<meta property="og:url" content="http://suibo.tv/2016/10/27/kibana/index.html">
 <meta property="og:site_name" content="淘乐创想科技技术">
+<meta property="og:description" content="kibana 是展示数据的WEB界面，方便开发定位与解决程序性能的好工具1.安装JAVA环境 jdk1.82.安装kibana3.编辑配置文件">
+<meta property="og:updated_time" content="2016-10-27T14:48:00.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="淘乐创想科技技术">
+<meta name="twitter:title" content="kibana">
+<meta name="twitter:description" content="kibana 是展示数据的WEB界面，方便开发定位与解决程序性能的好工具1.安装JAVA环境 jdk1.82.安装kibana3.编辑配置文件">
 
 
 
@@ -110,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="http://suibo.tv/"/>
+  <link rel="canonical" href="http://suibo.tv/2016/10/27/kibana/"/>
 
 
-  <title> 淘乐创想科技技术 </title>
+  <title> kibana | 淘乐创想科技技术 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -134,9 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -215,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -237,10 +239,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/10/27/kibana/" itemprop="url">
-                  kibana
-                </a>
+                kibana
               
             
           </h1>
@@ -306,286 +305,84 @@
       
 
       
-        
-          <p>kibana 是展示数据的WEB界面，方便开发定位与解决程序性能的好工具<br>1.安装JAVA环境 jdk1.8<br>2.安装kibana<br>3.编辑配置文件<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/27/kibana/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+        <p>kibana 是展示数据的WEB界面，方便开发定位与解决程序性能的好工具<br>1.安装JAVA环境 jdk1.8<br>2.安装kibana<br>3.编辑配置文件<br><a id="more"></a></p>
+<h1 id="1-安装JAVA环境-jdk1-8"><a href="#1-安装JAVA环境-jdk1-8" class="headerlink" title="1.安装JAVA环境 jdk1.8"></a>1.安装JAVA环境 jdk1.8</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -L &quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&quot; -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;  -H &quot;Connection: keep-alive&quot; -O </div><div class="line">    rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm</div></pre></td></tr></table></figure>
+<h1 id="2-安装kibana"><a href="#2-安装kibana" class="headerlink" title="2.安装kibana"></a>2.安装kibana</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zvxf kibana-4.6.1-linux-x86_64.tar.gz</div></pre></td></tr></table></figure>
+<h1 id="3-编辑配置文件"><a href="#3-编辑配置文件" class="headerlink" title="3.编辑配置文件"></a>3.编辑配置文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; * vi config/kibana.yml </div><div class="line">&gt; * elasticsearch.url: &quot;http://127.0.0.1:9200&quot; # elasticsearch的IP</div><div class="line">``</div><div class="line"></div><div class="line"># 4.启动</div></pre></td></tr></table></figure>
+<p>bin/kibana<br>```  </p>
+
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/27/logstash教程/" itemprop="url">
-                  logstash教程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-27T18:01:59+08:00" content="2016-10-27">
-              2016-10-27
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/运维技术/" itemprop="url" rel="index">
-                    <span itemprop="name">运维技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/27/logstash教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/27/logstash教程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/运维技术/" rel="tag">#运维技术</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>安装logstash负责收集LOG<br>1.安装JAVA环境 jdk1.8<br>2.安装logstash<br>3.配置文件<br>4.启动logstash<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/27/logstash教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/27/logstash教程/" rel="next" title="logstash教程">
+                <i class="fa fa-chevron-left"></i> logstash教程
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/21/elk教程/" itemprop="url">
-                  Elasticsearch-2.4.0安装教程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-21T16:02:05+08:00" content="2016-10-21">
-              2016-10-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/运维技术/" itemprop="url" rel="index">
-                    <span itemprop="name">运维技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/10/21/elk教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/21/elk教程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>1.安装JAVA环境 jdk1.8<br>2.安装ELK<br>3.编辑配置文件 vi config/elasticsearch.yml<br>4.性能优化<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/10/21/elk教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/27/kibana/"
+     data-title="kibana"
+     data-content=""
+     data-url="http://suibo.tv/2016/10/27/kibana/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -593,6 +390,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/27/kibana/"
+           data-title="kibana" data-url="http://suibo.tv/2016/10/27/kibana/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -612,8 +417,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -663,6 +477,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装JAVA环境-jdk1-8"><span class="nav-number">1.</span> <span class="nav-text">1.安装JAVA环境 jdk1.8</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-安装kibana"><span class="nav-number">2.</span> <span class="nav-text">2.安装kibana</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-编辑配置文件"><span class="nav-number">3.</span> <span class="nav-text">3.编辑配置文件</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -759,6 +584,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
