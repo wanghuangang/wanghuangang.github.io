@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="运维技术," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="1.安装JAVA环境 jdk1.8
-123456789101112131415161718192021222324	curl -L &quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&quot; -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;">
+<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Elasticsearch-2.4.0安装教程">
-<meta property="og:url" content="http://suibo.tv/2016/10/21/elk教程/index.html">
+<meta property="og:title" content="Hello Taole">
+<meta property="og:url" content="http://suibo.tv/2016/10/21/hello-world/index.html">
 <meta property="og:site_name" content="淘乐创想科技技术">
-<meta property="og:description" content="1.安装JAVA环境 jdk1.8
-123456789101112131415161718192021222324	curl -L &quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&quot; -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;">
-<meta property="og:updated_time" content="2016-10-27T03:58:51.482Z">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
+<meta property="og:updated_time" content="2016-10-21T11:25:10.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Elasticsearch-2.4.0安装教程">
-<meta name="twitter:description" content="1.安装JAVA环境 jdk1.8
-123456789101112131415161718192021222324	curl -L &quot;http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm&quot; -H &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot;">
+<meta name="twitter:title" content="Hello Taole">
+<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 
 
 
@@ -117,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="http://suibo.tv/2016/10/21/elk教程/"/>
+  <link rel="canonical" href="http://suibo.tv/2016/10/21/hello-world/"/>
 
 
-  <title> Elasticsearch-2.4.0安装教程 | 淘乐创想科技技术 </title>
+  <title> Hello Taole | 淘乐创想科技技术 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -242,7 +242,7 @@
             
             
               
-                Elasticsearch-2.4.0安装教程
+                Hello Taole
               
             
           </h1>
@@ -254,7 +254,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-21T16:02:05+08:00" content="2016-10-21">
+            <time itemprop="dateCreated" datetime="2016-10-21T19:25:10+08:00" content="2016-10-21">
               2016-10-21
             </time>
           </span>
@@ -282,25 +282,15 @@
       
 
       
-        <pre><code>1.安装JAVA环境 jdk1.8
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">	curl -L <span class="string">"http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm"</span> -H <span class="string">"Cookie: oraclelicense=accept-securebackup-cookie"</span>  -H <span class="string">"Connection: keep-alive"</span> -O </div><div class="line">	rpm -ivh 8u102-b14/jdk-8u102-linux-x64.rpm</div><div class="line">``` </div><div class="line"></div><div class="line">    2.安装ELK</div><div class="line">   		下载网址：&lt;https://www.elastic.co/&gt;</div><div class="line">  		Elasticsearch + Logstash + Kibana = elk</div><div class="line">		分别用tar -zvxv 解压以上三个压缩包 </div><div class="line">	</div><div class="line">    Elasticsearch那台机器 目录安装以下证书</div><div class="line">	bin/plugin install license //证书</div><div class="line">	bin/plugin install mobz/elasticsearch-head  //监控插件</div><div class="line"> 	bin/plugin install lmenezes/elasticsearch-kopf//监控插件</div><div class="line"></div><div class="line">    Elasticsearch进程一定要以非root权限启动</div><div class="line">	groupadd elasticsearch //加组</div><div class="line">　	useradd  elasticsearch(用户名) -g elasticsearch(组名) -p elasticsearch(密码) //用户名</div><div class="line">	chown -R elasticsearch:elasticsearch elasticsearch //改目录权限</div><div class="line"></div><div class="line">	linux配置扩内存,以下可以优化Elasticsearch性能</div><div class="line">	Edit /etc/security/limits.conf</div><div class="line"> 	*                soft    memlock        unlimited</div><div class="line">	*                hard    memlock        unlimited</div><div class="line">    3.编辑vi config/elasticsearch.yml</div></pre></td></tr></table></figure>
-<pre><code>  cluster.name: taolelogs #集群名字
-  node.master: true  #是否是主节点
-node.date: false   #是否是数据节点
-node.name: nodemaster-hz90 #本节点名字
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">4.编辑bin/elasticsearch.in.sh 文件</div></pre></td></tr></table></figure>
-<pre><code>if [ &quot;x$ES_MIN_MEM&quot; = &quot;x&quot; ]; then
-    ES_MIN_MEM=8g #设置内存
-fi
-if [ &quot;x$ES_MAX_MEM&quot; = &quot;x&quot; ]; then
-    ES_MAX_MEM=8g #设置内存
-fi
-if [ &quot;x$ES_HEAP_SIZE&quot; != &quot;x&quot; ]; then
-    ES_MIN_MEM=$ES_HEAP_SIZE
-    ES_MAX_MEM=$ES_HEAP_SIZE
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5.启动</div></pre></td></tr></table></figure>
-<pre><code>bin/elasticsearch
-</code></pre><p> ```</p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
@@ -321,24 +311,18 @@ if [ &quot;x$ES_HEAP_SIZE&quot; != &quot;x&quot; ]; then
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/运维技术/" rel="tag">#运维技术</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/21/elk教程/" rel="next" title="Elasticsearch-2.4.0安装教程">
+                <i class="fa fa-chevron-left"></i> Elasticsearch-2.4.0安装教程
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/21/hello-world/" rel="prev" title="Hello Taole">
-                Hello Taole <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -445,7 +429,7 @@ if [ &quot;x$ES_HEAP_SIZE&quot; != &quot;x&quot; ]; then
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
